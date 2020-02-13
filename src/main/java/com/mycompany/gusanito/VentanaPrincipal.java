@@ -1,33 +1,34 @@
-
-import javax.swing.ImageIcon;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.mycompany.gusanito;
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
- * @author ramos-drh
+ * @author juan
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaPrincipal
      */
-    
-    private ImageIcon imagen;   //Para la img del gusanito (Importar clase)
-    
     public VentanaPrincipal() {
         initComponents();
-        this.setBounds(300, 300, 500, 500); //coord y tam (px)
+        this.setBounds(300, 300, 500, 500);
         this.setTitle("Juego del Piko Piko");
-        this.setResizable(false);   //para que no sea redimensionable
-        this.etiquetaImagen.setText("");    //Y tiene que OCULTAR el txt
-        imagen = new ImageIcon("res/gusano.png");
+        this.setResizable(false);
+        this.etiquetaImagen.setText("");
+        ImageIcon imagen = new ImageIcon("../imagenes/banner_gusanito.png");
+        Image image = imagen.getImage(); // transform it 
+        Image newimg = image.getScaledInstance(120, 120, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+        imagen = new ImageIcon(newimg);  // transform it back
         this.etiquetaImagen.setIcon(imagen);
-        
+        //this.etiquetaImagen.setIcon(icon);
     }
 
     /**
@@ -40,17 +41,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         etiquetaImagen = new javax.swing.JLabel();
-        BotonJugar = new javax.swing.JButton();
+        botonJugar = new javax.swing.JButton();
         botonCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        etiquetaImagen.setText("jLabel1");
+        etiquetaImagen.setText("Imagen");
 
-        BotonJugar.setText("Jugar");
-        BotonJugar.addActionListener(new java.awt.event.ActionListener() {
+        botonJugar.setText("Jugar");
+        botonJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonJugarActionPerformed(evt);
+                botonJugarActionPerformed(evt);
             }
         });
 
@@ -66,26 +67,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(etiquetaImagen)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(BotonJugar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addGap(65, 65, 65)
+                .addComponent(botonJugar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botonCerrar)
-                .addGap(83, 83, 83))
+                .addGap(64, 64, 64))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(232, Short.MAX_VALUE)
+                .addComponent(etiquetaImagen)
+                .addGap(216, 216, 216))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(140, 140, 140)
                 .addComponent(etiquetaImagen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonJugar)
+                    .addComponent(botonJugar)
                     .addComponent(botonCerrar))
-                .addGap(81, 81, 81))
+                .addGap(138, 138, 138))
         );
 
         pack();
@@ -93,17 +94,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
         // TODO add your handling code here:
-        System.exit(0); //Si lo pulso salga
+        System.exit(0);
     }//GEN-LAST:event_botonCerrarActionPerformed
 
-    private void BotonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugarActionPerformed
-        //Pregunta nº jugadores
-        //Y nombre de cada jug
-        
-        
-        VentanaJuego ventanaAux =new VentanaJuego();
+    private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed
+        // Preguntar número de jugadores
+        // Nombre de cada jugador
+
+        VentanaJuego ventanaAux = new VentanaJuego();
         ventanaAux.setVisible(true);
-    }//GEN-LAST:event_BotonJugarActionPerformed
+    }//GEN-LAST:event_botonJugarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,8 +141,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonJugar;
     private javax.swing.JButton botonCerrar;
+    private javax.swing.JButton botonJugar;
     private javax.swing.JLabel etiquetaImagen;
     // End of variables declaration//GEN-END:variables
 }
