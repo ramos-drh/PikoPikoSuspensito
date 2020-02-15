@@ -23,9 +23,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setTitle("Juego del Piko Piko");
         this.setResizable(false);
         this.etiquetaImagen.setText("");
-        ImageIcon imagen = new ImageIcon("../imagenes/banner_gusanito.png");
+        ImageIcon imagen = new ImageIcon("res/banner_gusanito.png");
         Image image = imagen.getImage(); // transform it 
-        Image newimg = image.getScaledInstance(120, 120, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+        Image newimg = image.getScaledInstance(325, 200, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
         imagen = new ImageIcon(newimg);  // transform it back
         this.etiquetaImagen.setIcon(imagen);
         //this.etiquetaImagen.setIcon(icon);

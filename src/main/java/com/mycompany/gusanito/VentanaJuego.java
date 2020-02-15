@@ -31,8 +31,6 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         textoTitular = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         textoTitular.setText("JUEGO DEL PIKO PIKO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
