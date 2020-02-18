@@ -26,4 +26,42 @@ public enum CaraDado {
         this.valor = valor;
         this.archivo = archivo;
     }
+
+    public static CaraDado getCARA_1() {
+        return CARA_1;
+    }
+
+    public static CaraDado getCARA_2() {
+        return CARA_2;
+    }
+
+    public static CaraDado getCARA_3() {
+        return CARA_3;
+    }
+
+    public static CaraDado getCARA_4() {
+        return CARA_4;
+    }
+
+    public static CaraDado getCARA_5() {
+        return CARA_5;
+    }
+
+    public static CaraDado getCARA_6() {
+        return CARA_6;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public String getArchivo() {
+        return archivo;
+    }
+    
+    
 }
