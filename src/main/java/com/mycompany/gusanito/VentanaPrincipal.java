@@ -5,6 +5,7 @@
  */
 package com.mycompany.gusanito;
 
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -21,6 +22,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setBounds(300, 300, 500, 500);
         this.setTitle("Juego del Piko Piko");
+        this.getContentPane().setBackground(Color.BLUE);
         this.setResizable(false);
         this.etiquetaImagen.setText("");
         ImageIcon imagen = new ImageIcon("res/banner_gusanito.png");
