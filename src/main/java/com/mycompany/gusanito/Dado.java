@@ -15,7 +15,7 @@ public class Dado {
     boolean disponible;
 
     public Dado(CaraDado[] caras) {
-        this.caras = new CaraDado[]{CaraDado.CARA_UNO,CaraDado.CARA_DOS,CaraDado.CARA_TRES,CaraDado.CARA_CUATRO,CaraDado.CARA_CINCO,CaraDado.CARA_SEIS};
+        this.caras = new CaraDado[]{CaraDado.CARA_1,CaraDado.CARA_2,CaraDado.CARA_3,CaraDado.CARA_4,CaraDado.CARA_5,CaraDado.CARA_6};
         this.caraSeleccionada = 1;
         this.disponible = true;
     }
