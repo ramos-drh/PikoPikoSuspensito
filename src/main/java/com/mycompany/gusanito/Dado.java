@@ -19,4 +19,30 @@ public class Dado {
         this.caraSeleccionada = 1;
         this.disponible = true;
     }
+
+    
+    
+    public CaraDado[] getCaras() {
+        return caras;
+    }
+
+    public void setCaras(CaraDado[] caras) {
+        this.caras = caras;
+    }
+
+    public int getCaraSeleccionada() {
+        return caraSeleccionada;
+    }
+
+    public void setCaraSeleccionada(int caraSeleccionada) {
+        this.caraSeleccionada = caraSeleccionada;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
 }

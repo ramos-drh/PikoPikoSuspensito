@@ -8,6 +8,7 @@ package com.mycompany.gusanito;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -102,7 +103,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed
         // Preguntar número de jugadores
         // Nombre de cada jugador
-
+        Object[] numeroJugadoresPosibles = {2,3,4};
+        int seleccionInicial = 1;
+        int numeroJugadores = (int) JOptionPane.showInputDialog(null, "¿Cuántos jugadores quieres?",
+        "Jugadores", JOptionPane.QUESTION_MESSAGE, null, numeroJugadoresPosibles, seleccionInicial); 
+        System.out.println(numeroJugadores);
         VentanaJuego ventanaAux = new VentanaJuego();
         ventanaAux.setVisible(true);
     }//GEN-LAST:event_botonJugarActionPerformed

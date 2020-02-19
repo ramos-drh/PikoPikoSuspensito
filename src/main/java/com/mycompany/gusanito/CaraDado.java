@@ -62,6 +62,4 @@ public enum CaraDado {
     public String getArchivo() {
         return archivo;
     }
-    
-    
 }
