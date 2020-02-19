@@ -14,7 +14,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     /**
      * Creates new form VentanaJuego
      */
-    public VentanaJuego() {
+    public VentanaJuego(int numeroJugadores) {
         initComponents();
         this.setBounds(300,300,700,700);
         this.setTitle("Ventana del juego");

@@ -7,8 +7,10 @@ package com.mycompany.gusanito;
 
 import java.awt.Color;
 import java.awt.Image;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -101,14 +103,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCerrarActionPerformed
 
     private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed
-        // Preguntar número de jugadores
-        // Nombre de cada jugador
-        Object[] numeroJugadoresPosibles = {2,3,4};
-        int seleccionInicial = 1;
-        int numeroJugadores = (int) JOptionPane.showInputDialog(null, "¿Cuántos jugadores quieres?",
-        "Jugadores", JOptionPane.QUESTION_MESSAGE, null, numeroJugadoresPosibles, seleccionInicial); 
-        System.out.println(numeroJugadores);
-        VentanaJuego ventanaAux = new VentanaJuego();
+        int numeroJugadores = 2;
+        Object[] numeroJugadoresPosibles = {2, 3, 4};
+        ImageIcon icono = new ImageIcon("res/dadoGusano.png");
+        try {
+            numeroJugadores = (int) JOptionPane.showInputDialog(null, "¿Cuántos jugadores quieres?",
+                    "Jugadores", JOptionPane.QUESTION_MESSAGE, icono, numeroJugadoresPosibles, 1);
+        } catch (Exception NullPointerException) {
+            System.out.println("Se ha cancelado.");
+        }
+        VentanaJuego ventanaAux = new VentanaJuego(numeroJugadores);
         ventanaAux.setVisible(true);
     }//GEN-LAST:event_botonJugarActionPerformed
 
