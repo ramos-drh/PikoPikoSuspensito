@@ -10,9 +10,9 @@ package com.mycompany.gusanito;
  * @author juan
  */
 public class Dado {
-    CaraDado[] caras;
-    int caraSeleccionada;
-    boolean disponible;
+    private CaraDado[] caras;
+    private int caraSeleccionada;
+    private boolean disponible;
 
     public Dado(CaraDado[] caras) {
         this.caras = new CaraDado[]{CaraDado.CARA_1,CaraDado.CARA_2,CaraDado.CARA_3,CaraDado.CARA_4,CaraDado.CARA_5,CaraDado.CARA_6};

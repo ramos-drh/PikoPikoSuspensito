@@ -5,6 +5,8 @@
  */
 package com.mycompany.gusanito;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author juan
@@ -19,37 +21,14 @@ public enum CaraDado {
     
     private int numero;
     private int valor;
-    private String archivo;
+    private ImageIcon icono;
 
-    private CaraDado(int numero, int valor, String archivo) {
+    private CaraDado(int numero, int valor, String icono) {
         this.numero = numero;
         this.valor = valor;
-        this.archivo = archivo;
+        this.icono = new ImageIcon(icono);
     }
 
-    public static CaraDado getCARA_1() {
-        return CARA_1;
-    }
-
-    public static CaraDado getCARA_2() {
-        return CARA_2;
-    }
-
-    public static CaraDado getCARA_3() {
-        return CARA_3;
-    }
-
-    public static CaraDado getCARA_4() {
-        return CARA_4;
-    }
-
-    public static CaraDado getCARA_5() {
-        return CARA_5;
-    }
-
-    public static CaraDado getCARA_6() {
-        return CARA_6;
-    }
 
     public int getNumero() {
         return numero;
@@ -59,7 +38,7 @@ public enum CaraDado {
         return valor;
     }
 
-    public String getArchivo() {
-        return archivo;
+    public ImageIcon getArchivo() {
+        return icono;
     }
 }
