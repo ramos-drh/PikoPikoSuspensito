@@ -5,12 +5,14 @@
  */
 package com.mycompany.gusanito;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author juan
  */
 public class VentanaJuego extends javax.swing.JFrame {
-
+    TurnoJugadores turnoJugadores;
     /**
      * Creates new form VentanaJuego
      */
@@ -18,6 +20,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         initComponents();
         this.setBounds(300,300,700,700);
         this.setTitle("Ventana del juego");
+        turnoJugadores = new TurnoJugadores(numeroJugadores);
     }
 
     /**
