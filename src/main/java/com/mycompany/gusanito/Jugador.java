@@ -27,12 +27,16 @@ public class Jugador {
         int resultado = 0;
         Random aleatorio = new Random();
         dados = new Dado[8];
-
+        
         for (int i = 0; i < dados.length; i++) {
 
+            if(dados[i].isDisponible()){
+            
             dados[i].setCaraSeleccionada(aleatorio.nextInt(6) + 1);
-        }
+             }
         
+      
+        }
     }
 
     public String getNombre() {
