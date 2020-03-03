@@ -11,6 +11,12 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import java.applet.*;
+import java.io.*;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
  *
@@ -33,7 +39,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Image newimg = image.getScaledInstance(325, 200, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
         imagen = new ImageIcon(newimg);  // transform it back
         this.etiquetaImagen.setIcon(imagen);
-        //this.etiquetaImagen.setIcon(icon);
+        try {
+            Clip clipSonido = AudioSystem.getClip();
+            clipSonido.open(AudioSystem.getAudioInputStream(new File("res/tema.wav")));
+            clipSonido.start();
+        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException fail) {
+        }
     }
 
     /**
