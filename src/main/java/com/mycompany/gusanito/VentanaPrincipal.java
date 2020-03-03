@@ -5,6 +5,18 @@
  */
 package com.mycompany.gusanito;
 
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.*;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.Line;
+
 /**
  *
  * @author s0cr4t3sd
@@ -16,18 +28,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
-        this.setBounds(100,100,500,533);
+        this.setBounds(100, 100, 500, 533);
         this.setResizable(false);
         this.jLabel1.setText("");
-        
+
         this.jButton3.setText("Jugar");
         this.jButton1.setText("Salir");
-        
+
         this.setTitle("Piko Viko");
 
-        
+        try {
+            this.musica();
+        } catch (Exception ex) {
+            System.out.println("Error al ejecutar sonido.");
+        }
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,17 +91,40 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        click();
         VentanaAddJugadores ventanaJuego = new VentanaAddJugadores(this);
         ventanaJuego.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
-    
-    
-    
+
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        click();
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    public void musica() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+        File audioFile = new File("res/tema.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+        AudioFormat format = audioStream.getFormat();
+        DataLine.Info info = new DataLine.Info(Clip.class, format);
+        Clip audioClip = (Clip) AudioSystem.getLine(info);
+        audioClip.open(audioStream);
+        audioClip.loop(Clip.LOOP_CONTINUOUSLY);
+        audioClip.start();
+    }
+
+    public void click() {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("res/click3.wav").getAbsoluteFile());
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
+    }
 
     /**
      * @param args the command line arguments
