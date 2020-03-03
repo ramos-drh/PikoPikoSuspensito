@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.pikopiko;
+package com.mycompany.gusanito;
 
+import com.mycompany.gusanito.Jugador;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -340,7 +341,11 @@ public class Z_VentanaAddJugadores extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "El nombre del judaor nº 3 tiene que tener contenido");
                 }
             }
-
+            
+            Z_VentanaJuego vJuego = new Z_VentanaJuego(jugadores);
+            vJuego.setVisible(true);
+            this.setVisible(false);
+            
         }else{
             JOptionPane.showMessageDialog(this, "Llama a un programador que esto va a explotar");
         }

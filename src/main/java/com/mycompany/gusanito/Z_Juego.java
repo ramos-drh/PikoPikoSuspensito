@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.pikopiko;
+package com.mycompany.gusanito;
 
 /**
  *
@@ -52,7 +52,7 @@ public class Z_Juego extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(210, 350, 78, 32);
+        jButton3.setBounds(210, 350, 90, 31);
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +61,7 @@ public class Z_Juego extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(210, 390, 78, 32);
+        jButton1.setBounds(210, 390, 90, 31);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("res/piko_piko.jpg"));
         jLabel1.setAutoscrolls(true);
