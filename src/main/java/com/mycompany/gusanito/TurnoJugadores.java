@@ -12,27 +12,23 @@ import java.util.ArrayList;
  * @author ramos
  */
 public class TurnoJugadores {
-    //Esta lista no es de Strings, es de Jugadores pero Jugador no está implementado
-    private ArrayList<String> arrayJugadores;
+    //Esta lista no es de Jugadores, es de Jugadores pero Jugador no está implementado
+    private ArrayList<Jugador> arrayJugadores;
     private int turno;
     
     public TurnoJugadores(int nJugadores){
-        arrayJugadores = new ArrayList<String>(nJugadores-1);
+        arrayJugadores = new ArrayList<Jugador>(nJugadores-1);
         turno = 0;
     }
     
     //Devuelve el jugador que tiene el turno actual
-    public String getTurnoJugador(){
+    public Jugador getTurnoJugador(){
         return arrayJugadores.get(turno);
     }
     
-    //No estoy seguro de lo que hace
-    public String getTodosJugadores(){
-        String infoJugadores = "";
-        for(int i = 0; i < arrayJugadores.size(); i++){
-           infoJugadores = infoJugadores + arrayJugadores.get(i).toString() + "\n";
-        }
-        return infoJugadores;
+    //Debe devolver el array de jugadores
+    public ArrayList<Jugador> getTodosJugadores(){
+        return arrayJugadores;
     }
     
     //Pasa el turno al siguiente jugador
@@ -47,12 +43,13 @@ public class TurnoJugadores {
         }
     }
 
-    public ArrayList<String> getArrayJugadores() {
+    //Entiendo que no hace falta porque ya está el método getTodos
+    public ArrayList<Jugador> getArrayJugadores() {
         return arrayJugadores;
     }
 
     //Quizás no haga falta
-    public void setArrayJugadores(ArrayList<String> arrayJugadores) {
+    public void setArrayJugadores(ArrayList<Jugador> arrayJugadores) {
         this.arrayJugadores = arrayJugadores;
     }
 
