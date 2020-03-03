@@ -12,15 +12,15 @@ import java.util.ArrayList;
  * @author juan
  */
 public class VentanaJuego extends javax.swing.JFrame {
-    TurnoJugadores turnoJugadores;
+    private TurnoJugadores turnoJugadores;
     /**
      * Creates new form VentanaJuego
      */
-    public VentanaJuego(int numeroJugadores) {
+    public VentanaJuego(ArrayList<Jugador> jugadores) {
         initComponents();
         this.setBounds(300,300,700,700);
         this.setTitle("Ventana del juego");
-        turnoJugadores = new TurnoJugadores(numeroJugadores);
+        turnoJugadores = new TurnoJugadores(jugadores);
     }
 
     /**

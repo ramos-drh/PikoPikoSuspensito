@@ -6,19 +6,20 @@
 package com.mycompany.gusanito;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
  * @author ramos
  */
 public class TurnoJugadores {
-    //Esta lista no es de Jugadores, es de Jugadores pero Jugador no está implementado
     private ArrayList<Jugador> arrayJugadores;
     private int turno;
     
-    public TurnoJugadores(int nJugadores){
-        arrayJugadores = new ArrayList<Jugador>(nJugadores-1);
-        turno = 0;
+    public TurnoJugadores(ArrayList<Jugador> jugadores){
+        Random aleatorio = new Random();
+        arrayJugadores = jugadores;
+        turno = aleatorio.nextInt(jugadores.size());
     }
     
     //Devuelve el jugador que tiene el turno actual
@@ -36,7 +37,7 @@ public class TurnoJugadores {
         //De nuevo necesito var nJugadores
         //Ej 4 jug: si turno < 3 [0, 1, 2] => turno++
         //Ej 2 jug: si turno < 1 [0] => turno++
-        if(turno < arrayJugadores.size()){
+        if(turno < arrayJugadores.size()-1){
             turno++;
         } else{
             turno = 0;
@@ -60,5 +61,20 @@ public class TurnoJugadores {
     public void setTurno(int turno) {
         this.turno = turno;
     }
+    
+//    public static void main(String[] args) {
+//        ArrayList<Jugador> lista1 = new ArrayList<>();
+//        lista1.add(new Jugador("Jug1"));
+//        lista1.add(new Jugador("Jug2"));
+//        lista1.add(new Jugador("Jug3"));
+//        
+//        TurnoJugadores t1 = new TurnoJugadores(lista1);
+//        
+//        System.out.println(t1.getTurnoJugador().getNombre());
+//        t1.pasarSiguiente();
+//        
+//        System.out.println(t1.getTurnoJugador().getNombre());
+//        t1.pasarSiguiente();
+//    }
     
 }
