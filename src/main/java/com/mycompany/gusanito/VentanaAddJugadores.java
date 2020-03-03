@@ -16,8 +16,8 @@ import javax.swing.JOptionPane;
  * @author s0cr4t3sd
  */
 
-public class Z_VentanaAddJugadores extends javax.swing.JFrame {
-    private Z_Juego juego;
+public class VentanaAddJugadores extends javax.swing.JFrame {
+    private VentanaPrincipal juego;
     /**
      * Creates new form VentanaJuego
      */
@@ -25,7 +25,7 @@ public class Z_VentanaAddJugadores extends javax.swing.JFrame {
     private int totalCombo;
     private ArrayList<Jugador> jugadores = new ArrayList<>();
     
-    public Z_VentanaAddJugadores(Z_Juego juego) {
+    public VentanaAddJugadores(VentanaPrincipal juego) {
         this.juego = juego;
         
         initComponents();
@@ -342,7 +342,7 @@ public class Z_VentanaAddJugadores extends javax.swing.JFrame {
                 }
             }
             
-            Z_VentanaJuego vJuego = new Z_VentanaJuego(jugadores);
+            VentanaJuego vJuego = new VentanaJuego(jugadores);
             vJuego.setVisible(true);
             this.setVisible(false);
             
@@ -368,13 +368,13 @@ public class Z_VentanaAddJugadores extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Z_VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Z_VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Z_VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Z_VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

@@ -5,47 +5,29 @@
  */
 package com.mycompany.gusanito;
 
-import java.awt.Color;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import java.applet.*;
-import java.io.*;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-
 /**
  *
- * @author juan
+ * @author s0cr4t3sd
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaPrincipal
+     * Creates new form Juego
      */
     public VentanaPrincipal() {
         initComponents();
-        this.setBounds(300, 300, 500, 500);
-        this.setTitle("Juego del Piko Piko");
-        this.getContentPane().setBackground(Color.BLUE);
+        this.setBounds(100,100,500,533);
         this.setResizable(false);
-        this.etiquetaImagen.setText("");
-        ImageIcon imagen = new ImageIcon("res/banner_gusanito.png");
-        Image image = imagen.getImage(); // transform it 
-        Image newimg = image.getScaledInstance(325, 200, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-        imagen = new ImageIcon(newimg);  // transform it back
-        this.etiquetaImagen.setIcon(imagen);
-        try {
-            Clip clipSonido = AudioSystem.getClip();
-            clipSonido.open(AudioSystem.getAudioInputStream(new File("res/tema.wav")));
-            clipSonido.start();
-        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException fail) {
-        }
+        this.jLabel1.setText("");
+        
+        this.jButton3.setText("Jugar");
+        this.jButton1.setText("Salir");
+        
+        this.setTitle("Piko Viko");
+
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,76 +38,55 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        etiquetaImagen = new javax.swing.JLabel();
-        botonJugar = new javax.swing.JButton();
-        botonCerrar = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        etiquetaImagen.setText("Imagen");
-
-        botonJugar.setText("Jugar");
-        botonJugar.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonJugarActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(210, 350, 90, 31);
 
-        botonCerrar.setText("Salir");
-        botonCerrar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCerrarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(210, 390, 90, 31);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(botonJugar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonCerrar)
-                .addGap(64, 64, 64))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(232, Short.MAX_VALUE)
-                .addComponent(etiquetaImagen)
-                .addGap(216, 216, 216))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(etiquetaImagen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonJugar)
-                    .addComponent(botonCerrar))
-                .addGap(138, 138, 138))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("res/piko_piko.jpg"));
+        jLabel1.setAutoscrolls(true);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 500, 500);
+        jLabel1.getAccessibleContext().setAccessibleDescription("");
+
+        getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        VentanaAddJugadores ventanaJuego = new VentanaAddJugadores(this);
+        ventanaJuego.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+    
+    
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_botonCerrarActionPerformed
-
-    private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed
-        int numeroJugadores = 2;
-        Object[] numeroJugadoresPosibles = {2, 3, 4};
-        ImageIcon icono = new ImageIcon("res/dadoGusano.png");
-        try {
-            numeroJugadores = (int) JOptionPane.showInputDialog(null, "¿Cuántos jugadores quieres?",
-                    "Jugadores", JOptionPane.QUESTION_MESSAGE, icono, numeroJugadoresPosibles, 1);
-        } catch (Exception NullPointerException) {
-            System.out.println("Se ha cancelado.");
-        }
-        VentanaJuego ventanaAux = new VentanaJuego(numeroJugadores);
-        ventanaAux.setVisible(true);
-    }//GEN-LAST:event_botonJugarActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,6 +114,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -163,8 +127,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonCerrar;
-    private javax.swing.JButton botonJugar;
-    private javax.swing.JLabel etiquetaImagen;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
