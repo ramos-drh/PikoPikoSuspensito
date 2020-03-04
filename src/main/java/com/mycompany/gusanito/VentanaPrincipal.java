@@ -116,7 +116,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public void click() {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("res/click3.wav").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("res/click.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
