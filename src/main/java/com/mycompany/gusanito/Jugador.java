@@ -5,6 +5,7 @@
  */
 package com.mycompany.gusanito;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -16,6 +17,8 @@ public class Jugador {
     private String nombre;
     private int puntosAcum;
     private Dado[] dados;
+    private ArrayList<Racion> pilaRacion = new ArrayList<>();
+    private int tamPila;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
@@ -65,6 +68,27 @@ public class Jugador {
     @Override
     public String toString() {
         return "Jugador{" + "nombre=" + nombre + ", puntosAcum=" + puntosAcum + ", dados=" + dados + '}';
+    }
+    
+    
+    public boolean push(Racion r){
+        if(this.tamPila() < this.tamPila){
+            pilaRacion.add(r);
+            return true;
+        }
+        return false;
+    }
+    
+    public Racion pop(){        
+        return pilaRacion.remove(this.tamPila - 1);                
+    }
+    
+    public int tamPila(){
+        return pilaRacion.size();
+    }
+    
+    public boolean vacia(){
+        return pilaRacion.isEmpty();
     }
 
 }
